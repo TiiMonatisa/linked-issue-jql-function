@@ -1,0 +1,25 @@
+modules:
+  jira:jqlFunction:
+    - key: linked-issue-jql-issueswithtext-function
+      name: linked-issue-jql
+      arguments:
+        - name: text
+          required: true
+      types:
+        - issue
+      operators:
+        - in
+        - not in
+      function: functionKey
+  function:
+    - key: functionKey
+      handler: index.issuesWithText
+app:
+  runtime:
+    name: nodejs22.x
+    memoryMB: 256
+    architecture: arm64
+  id: ari:cloud:ecosystem::app/e6dac5cb-8edf-47f3-b017-03bfe4736241
+permissions:
+  scopes:
+    - read:jira-work
