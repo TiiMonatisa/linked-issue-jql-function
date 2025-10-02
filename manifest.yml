@@ -1,7 +1,7 @@
 modules:
   jira:jqlFunction:
     - key: linked-issue-jql-issueswithtext-function
-      name: linked-issue-jql
+      name: related-issues-of
       arguments:
         - name: text
           required: true
